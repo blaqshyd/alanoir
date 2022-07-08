@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/views/login_view.dart';
-import 'package:my_app/views/register_view.dart';
+import 'package:my_app/views/verification_view.dart';
 
 import '../firebase_options.dart';
 import 'home_view.dart';
@@ -21,15 +23,15 @@ class MainView extends StatelessWidget {
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.done:
-              final userVerified = FirebaseAuth.instance.currentUser;
-              if (userVerified?.emailVerified ?? false) {
-                print("Email verified");
-                // print(userVerified?.email);
-                // return HomeView();
-                return RegisterView();
+              final user = FirebaseAuth.instance.currentUser;
+              if (user != null) {
+                if (user.emailVerified) {
+                  log('Email Verified');
+                  return HomeView();
+                } else {
+                  return VerifyView();
+                }
               } else {
-                print("Email not verified");
-                // print(userVerified);
                 return LoginView();
               }
             default:
