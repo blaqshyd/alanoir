@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -25,13 +27,14 @@ class _VerifyViewState extends State<VerifyView> {
         child: Center(
           child: Column(
             children: [
-              const Text('Please verify Email Address'),
+              Text('Email verification sent to your email. Please verify to complete signup.'),
+              Text("If you didn't receive the verification email"),
               TextButton(
                 onPressed: () async {
                   final user = FirebaseAuth.instance.currentUser;
                   await user?.sendEmailVerification();
                 },
-                child: const Text('Send Email Verfication'),
+                child: Text('Send Email Verfication'),
               )
             ],
           ),
@@ -41,33 +44,3 @@ class _VerifyViewState extends State<VerifyView> {
   }
 }
 
-/*
- return Scaffold(
-      appBar: AppBar(
-        title: const Text("Email Verification"),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-          vertical: 18,
-        ),
-        child: Center(
-          child: Column(
-            children: [
-              const Text('Please verify Email Address'),
-              TextButton(
-                onPressed: () async {
-                  final user = FirebaseAuth.instance.currentUser;
-                  await user?.sendEmailVerification();
-                },
-                child: const Text('Send Email Verfication'),
-              )
-            ],
-          ),
-        ),
-      )),
-    );
-
-*/

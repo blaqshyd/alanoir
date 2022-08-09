@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/contants/constants.dart';
 import 'package:my_app/utils/routes.dart';
 
-enum MenuAction { logout }
+// enum MenuAction { logout }
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -24,7 +24,33 @@ class _HomeViewState extends State<HomeView> {
         title: Text("Alanoir"),
         // centerTitle: true,
         actions: [
-          // PopupMenuButton(
+          IconButton(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil(loginRoute, (route) => false);
+              },
+              icon: Icon(Icons.logout_rounded))
+        ],
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Home"),
+            sizedHeight40,
+            Text("Logged in as "),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+     // PopupMenuButton(
           //   onSelected: (value) {},
           //   itemBuilder: (context) {
           //     return [
@@ -35,19 +61,3 @@ class _HomeViewState extends State<HomeView> {
           //     ];
           //   },
           // ),
-          TextButton(
-              onPressed: () async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushNamed(context, loginView);
-              },
-              child: Text("Logout"))
-        ],
-      ),
-      body: Column(
-        children: [
-          Text("Home"),
-        ],
-      ),
-    );
-  }
-}

@@ -17,23 +17,18 @@ void main() async {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Alanoir',
-
       // For the theme variant
       themeMode: ThemeMode.system,
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
       // Theme variant ends
-      initialRoute: mainView,
+      initialRoute: mainRoute,
       routes: {
-        mainView: (context) => MainView(),
-        homeView: (context) => HomeView(),
-        loginView: (context) => LoginView(),
-        registerView: (context) => RegisterView(),
-        verifyView: (context) => VerifyView(),
-        // '/': (context) => HomePage(),
-        // '/login': (context) => LoginView(),
-        // '/register': (context) => RegisterView(),
-        // '/verify':(context) => VerifyView(),
+        mainRoute: (context) => MainView(),
+        homeRoute: (context) => HomeView(),
+        loginRoute: (context) => LoginView(),
+        registerRoute: (context) => RegisterView(),
+        verifyRoute: (context) => VerifyView(),
       },
     ),
   );
