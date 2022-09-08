@@ -118,7 +118,7 @@ class _RegisterViewState extends State<RegisterView> {
                     await user?.sendEmailVerification();
                     // Navigator.of(context).pushNamed(verifyRoute);
                   } on FirebaseAuthException catch (e) {
-                    if (e.code == 'weak-passwoed') {
+                    if (e.code == 'weak-password') {
                       await showErrorDialog(context, 'Weak Password');
                     } else if (e.code == 'email-already-in-use') {
                       await showErrorDialog(context, 'Email already in use');
@@ -136,6 +136,7 @@ class _RegisterViewState extends State<RegisterView> {
               sizedHeight30,
               MyDivider(
                 label: 'or Sign up with',
+                labelColor: Colors.black12,
                 color: Colors.grey[800]!,
                 indentleft: 35,
                 indentright: 35,
