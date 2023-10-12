@@ -12,7 +12,6 @@ dependencies:
   badges: ^2.0.3
   cloud_firestore: ^3.2.1
   cupertino_icons: ^1.0.2
-  device_preview: ^1.1.0
   feather_icons: ^1.2.0
   firebase_analytics: ^9.1.12
   firebase_auth: ^3.4.1

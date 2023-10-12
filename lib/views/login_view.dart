@@ -10,6 +10,8 @@ import 'package:my_app/utils/routes.dart';
 import 'package:neopop/widgets/buttons/neopop_button/neopop_button.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
 
+import '../utils/my_formfield.dart';
+
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
 
@@ -70,27 +72,27 @@ class _LoginViewState extends State<LoginView> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              sizedHeight40,
+              Constants.h30,
               //Email Field
               MyFormField(
                 inputHint: 'xyz@gmail.com',
                 inputLabel: 'Email Address',
                 controller: _emailController,
-                keyboardType: TextInputType.emailAddress,
+                inputKeyboardType: TextInputType.emailAddress,
                 border: OutlineInputBorder(),
               ),
-              sizedHeight20,
+              Constants.h20,
               // Password Field
               MyFormField(
                 inputHint: 'Enter password',
                 inputLabel: 'Password',
                 obscureText: true,
                 controller: _passwordController,
-                keyboardType: TextInputType.visiblePassword,
+                inputKeyboardType: TextInputType.visiblePassword,
                 border: OutlineInputBorder(),
                 validator: passwordValidator,
               ),
-              sizedHeight30,
+              Constants.h30,
               MaterialButton(
                 height: 50,
                 minWidth: double.infinity,
@@ -124,7 +126,7 @@ class _LoginViewState extends State<LoginView> {
                 },
                 child: const Text("Login"),
               ),
-              sizedHeight30,
+              Constants.h30,
               // Other Sign in Options
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -139,7 +141,7 @@ class _LoginViewState extends State<LoginView> {
                 ],
               ),
 
-              sizedHeight20,
+              Constants.h20,
               NeoPopButton(
                 color: kPrimaryColor,
                 onTapUp: () => HapticFeedback.vibrate(),

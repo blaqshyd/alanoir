@@ -12,7 +12,7 @@ import 'utils/themes.dart';
 // import 'views/homepage_view.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,

@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'my_formfield.dart';
+
 class customTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final String? inputHint, inputLabel;
@@ -22,7 +24,7 @@ class customTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyFormField(
-      keyboardType: keyboardType,
+      inputKeyboardType: keyboardType,
       validator: validator,
       controller: controller,
       obscureText: obscureText,

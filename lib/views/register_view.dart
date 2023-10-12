@@ -64,7 +64,7 @@ class _RegisterViewState extends State<RegisterView> {
                 "Alanior",
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
               ),
-              sizedHeight40,
+              Constants.h40,
               //Name Field
               // MyFormField(
               //   keyboardType: TextInputType.name,
@@ -72,7 +72,7 @@ class _RegisterViewState extends State<RegisterView> {
               //   inputLabel: 'Full name',
               //   outlineBorder: OutlineInputBorder(),
               // ),
-              // sizedHeight20,
+              // Constants.h20,
               // //Userame Field
               // MyFormField(
               //   keyboardType: TextInputType.name,
@@ -81,7 +81,7 @@ class _RegisterViewState extends State<RegisterView> {
               //   inputLabel: 'Username',
               //   outlineBorder: OutlineInputBorder(),
               // ),
-              // sizedHeight20,
+              // Constants.h20,
               // Email Field
               customTextField(
                 keyboardType: TextInputType.emailAddress,
@@ -90,7 +90,7 @@ class _RegisterViewState extends State<RegisterView> {
                 controller: _emailController,
                 validator: emailValidator,
               ),
-              sizedHeight20,
+              Constants.h20,
               // Password Field
               customTextField(
                 keyboardType: TextInputType.visiblePassword,
@@ -100,7 +100,7 @@ class _RegisterViewState extends State<RegisterView> {
                 controller: _passwordController,
                 validator: passwordValidator,
               ),
-              sizedHeight30,
+              Constants.h30,
               MaterialButton(
                 height: 50,
                 minWidth: double.infinity,
@@ -133,16 +133,16 @@ class _RegisterViewState extends State<RegisterView> {
                 },
                 child: const Text("Register"),
               ),
-              sizedHeight30,
-              MyDivider(
-                label: 'or Sign up with',
-                labelColor: Colors.black12,
-                color: Colors.grey[800]!,
-                indentleft: 35,
-                indentright: 35,
-                thickness: 3,
-              ),
-              sizedHeight20,
+              Constants.h30,
+              // MyDivider(
+              //   label: 'or Sign up with',
+              //   labelColor: Colors.black12,
+              //   color: Colors.grey[800]!,
+              //   indentleft: 35,
+              //   indentright: 35,
+              //   thickness: 3,
+              // ),
+              Constants.h20,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,

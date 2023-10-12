@@ -39,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Home"),
-            sizedHeight40,
+            Constants.h40,
             Text("Logged in as "),
           ],
         ),
